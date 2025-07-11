@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro {
+  background-color: white;
+  color: black;
+}
+
+.solocards {
+  background-color: #006b4d;
+  color: white;
+}
+
+.equadratic {
+  background-color: black;
+  color: white;
+}
+
+.mentamath {
+  background-color: #00b7ff;
+  color: black;
+}
+
+.notes {
+  background-color: #ffc400;
+  color: black;
+}
