@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rombsquare.xyz",
+  "homepage": "https://rombsquare.com",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@shadcn/ui": "^0.0.4",
