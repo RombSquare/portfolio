@@ -7,8 +7,13 @@ import portfolio.shared.generated.resources.Res
 import portfolio.shared.generated.resources.allFontResources
 
 @Composable
-fun getOrbitronFontFamily() = FontFamily(
-    Font(
-        resource = Res.allFontResources["orbitron"]!!,
-    )
-)
+fun getOrbitronFontFamily(): FontFamily? {
+    return Res.allFontResources["orbitron"]?.let { font ->
+        FontFamily(
+            Font(
+                resource = font,
+            )
+        )
+    }
+
+}

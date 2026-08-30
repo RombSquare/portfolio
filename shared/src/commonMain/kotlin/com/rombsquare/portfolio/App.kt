@@ -59,10 +59,18 @@ fun Intro() {
         )
         Text("Android developer")
 
-        Image(
-            painter = painterResource(Res.allDrawableResources["solocards_icon"]!!),
-            contentDescription = null
-        )
+        val icon = Res.allDrawableResources["solocards_icon"]
+
+        if (icon != null) {
+            Image(
+                painter = painterResource(icon),
+                contentDescription = null
+            )
+        } else {
+            Text("Cannot find image")
+        }
+
+
     }
 }
 
