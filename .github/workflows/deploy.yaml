@@ -28,10 +28,10 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Wasm App
-        run: ./gradlew :webApp:compileProductionExecutableKotlinWasmJs
+        run: ./gradlew :webApp:wasmJsBrowserDistribution
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: shared/build/dist/wasmJs/productionExecutable
+          folder: webApp/build/dist/wasmJs/productionExecutable
           branch: gh-pages
