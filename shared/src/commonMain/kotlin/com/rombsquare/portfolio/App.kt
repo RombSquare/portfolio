@@ -1,5 +1,6 @@
 package com.rombsquare.portfolio
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,7 +19,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.rombsquare.portfolio.utils.getOrbitronFontFamily
 import com.rombsquare.portfolio.utils.rememberScreenSize
+import org.jetbrains.compose.resources.painterResource
+import portfolio.shared.generated.resources.Res
+import portfolio.shared.generated.resources.allDrawableResources
 
 @Composable
 fun Section(
@@ -50,8 +55,14 @@ fun Intro() {
             text = "Volodymyr",
             fontSize = 40.sp,
             color = Color.White,
+            fontFamily = getOrbitronFontFamily()
         )
         Text("Android developer")
+
+        Image(
+            painter = painterResource(Res.allDrawableResources["solocards_icon"]!!),
+            contentDescription = null
+        )
     }
 }
 
