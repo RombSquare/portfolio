@@ -28,7 +28,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Wasm App
-        run: ./gradlew :webApp:wasmJsBrowserDistribution
+        run: ./gradlew :webApp:compileProductionExecutableKotlinWasmJs
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
