@@ -14,8 +14,13 @@ kotlin {
     }
     
     @OptIn(ExperimentalWasmDsl::class)
-    wasmJs {
-        browser()
+    wasmJs("portfolio") {
+        browser {
+            commonWebpackConfig {
+                outputFileName = "portfolio.js"
+            }
+        }
+        binaries.executable()
     }
     
     android {
@@ -24,7 +29,7 @@ kotlin {
        minSdk = libs.versions.android.minSdk.get().toInt()
     
        compilerOptions {
-           jvmTarget = JvmTarget.JVM_11
+           jvmTarget = JvmTarget.JVM_21
        }
        androidResources {
            enable = true

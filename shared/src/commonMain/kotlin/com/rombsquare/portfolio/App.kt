@@ -80,6 +80,7 @@ fun App() {
             Section(
                 modifier = Modifier.size(screenSize),
                 color = Color.Green,
+                contentColor = Color.Black,
             ) {
                 Text("World")
             }
@@ -87,6 +88,7 @@ fun App() {
             Section(
                 modifier = Modifier.size(screenSize),
                 color = Color.Blue,
+                contentColor = Color.Black,
             ) {
                 Text("Plus")
             }
