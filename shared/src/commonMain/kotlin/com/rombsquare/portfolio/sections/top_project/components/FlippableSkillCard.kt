@@ -42,8 +42,8 @@ fun FlippableSkillCard(
 
     ElevatedCard(
         modifier = Modifier
-            .width(200.dp)
-            .aspectRatio(3f)
+            .width(160.dp)
+            .aspectRatio(2.5f)
             .graphicsLayer {
                 rotationY = rotation
                 cameraDistance = 8f * density
