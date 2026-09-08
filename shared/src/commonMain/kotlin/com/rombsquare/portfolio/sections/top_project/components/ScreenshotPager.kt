@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.gestures.scrollBy
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -13,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -38,7 +36,6 @@ fun ScreenshotPager(
     modifier: Modifier,
     screenshots: List<DrawableResource>
 ) {
-    val scrollState = rememberScrollState()
     val scope = rememberCoroutineScope()
 
     Box(
@@ -46,7 +43,6 @@ fun ScreenshotPager(
     ) {
         Row(
             modifier = Modifier.fillMaxWidth()
-                .horizontalScroll(scrollState)
                 .pointerInput(Unit) {
                     detectHorizontalDragGestures { _, dragAmount ->
                         scope.launch {
