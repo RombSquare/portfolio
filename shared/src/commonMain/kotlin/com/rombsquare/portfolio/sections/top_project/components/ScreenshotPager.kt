@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.gestures.scrollBy
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -22,6 +24,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.unit.dp
 import com.rombsquare.portfolio.theme.veryDarkGreen
 import kotlinx.coroutines.launch
@@ -36,6 +39,9 @@ fun ScreenshotPager(
     modifier: Modifier,
     screenshots: List<DrawableResource>
 ) {
+    val isMobile = LocalWindowInfo.current.containerSize.width < 800
+
+    val scrollState = rememberScrollState()
     val scope = rememberCoroutineScope()
 
     Box(
@@ -43,12 +49,16 @@ fun ScreenshotPager(
     ) {
         Row(
             modifier = Modifier.fillMaxWidth()
+                .horizontalScroll(scrollState)
                 .pointerInput(Unit) {
-                    detectHorizontalDragGestures { _, dragAmount ->
-                        scope.launch {
-                            scrollState.scrollBy(-dragAmount)
+                    if (!isMobile) {
+                        detectHorizontalDragGestures { _, dragAmount ->
+                            scope.launch {
+                                scrollState.scrollBy(-dragAmount)
+                            }
                         }
                     }
+
                 },
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
