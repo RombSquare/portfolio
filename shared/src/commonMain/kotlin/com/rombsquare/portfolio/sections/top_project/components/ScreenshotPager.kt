@@ -64,7 +64,7 @@ fun ScreenshotPager(
                         .clip(RoundedCornerShape(16.dp)),
                     painter = painterResource(screenshot),
                     contentDescription = null,
-                    contentScale = ContentScale.Fit
+                    contentScale = ContentScale.FillHeight
                 )
             }
             Spacer(Modifier.size(8.dp))
