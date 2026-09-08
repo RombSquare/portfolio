@@ -132,7 +132,6 @@ fun TopProject(
         Box(
             modifier = Modifier
                 .padding(8.dp)
-                .padding(bottom = 16.dp)
                 .border(2.dp, normalGreen.copy(alpha = 0.3f))
                 .fillMaxWidth()
         ) {
